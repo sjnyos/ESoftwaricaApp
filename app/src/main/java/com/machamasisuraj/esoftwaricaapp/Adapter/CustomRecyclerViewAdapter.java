@@ -35,13 +35,21 @@ public class CustomRecyclerViewAdapter  extends RecyclerView.Adapter<CustomRecyc
     }
 
     @Override
-    public void onBindViewHolder(@NonNull studentViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull studentViewHolder holder, final int position) {
         Student student = lsStudent.get(position);
         holder.textView.setText(student.getFullName());
         holder.textView2.setText( Integer.toString(student.getAge()));
         holder.textView3.setText(student.getAddress());
         holder.textView4.setText(student.getGender());
         holder.imageView.setImageResource(student.getImageid());
+
+        holder.imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lsStudent.remove(position);
+                notifyDataSetChanged();
+            }
+        });
     }
 
     @Override
