@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.machamasisuraj.esoftwaricaapp.Fragment.AboutUsFragment;
 import com.machamasisuraj.esoftwaricaapp.Fragment.AddStudentFragment;
 import com.machamasisuraj.esoftwaricaapp.Fragment.StudentListFragment;
 
@@ -41,15 +42,18 @@ public class BottomNavActivity extends AppCompatActivity {
                        fragmentTransaction.commit();
                        return true;
                        }
-                   case  R.id.navigation_addstudent:
+                   case  R.id.navigation_addstudent:{
                        AddStudentFragment addStudentFragment= new AddStudentFragment(getApplicationContext());
                        fragmentTransaction.replace(R.id.frame_container,addStudentFragment);
                        fragmentTransaction.addToBackStack(null);
                        fragmentTransaction.commit();
-                       return true;
-                   case R.id.navigation_aboutus:
-                       Toast.makeText(BottomNavActivity.this, "aboutus", Toast.LENGTH_SHORT).show();
-                       return true;
+                       return true;}
+                   case R.id.navigation_aboutus:{
+                       AboutUsFragment aboutUsFragment= new AboutUsFragment(getApplicationContext());
+                       fragmentTransaction.replace(R.id.frame_container,aboutUsFragment);
+                       fragmentTransaction.addToBackStack(null);
+                       fragmentTransaction.commit();
+                       return true;}
 
                    default: return false;
 

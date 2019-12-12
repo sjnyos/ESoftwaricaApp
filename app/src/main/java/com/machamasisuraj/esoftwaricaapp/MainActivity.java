@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return;
             }
             if(etUsername.getText().toString().equals("softwarica") && etPassword.getText().toString().equals("coventry")){
-                Intent intent = new Intent(MainActivity.this,DashboardActivity.class);
+                Intent intent = new Intent(MainActivity.this,BottomNavActivity.class);
                 startActivity(intent);
             }
             else{
