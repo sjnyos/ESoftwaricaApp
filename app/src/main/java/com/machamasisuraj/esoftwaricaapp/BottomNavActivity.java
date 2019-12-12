@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.machamasisuraj.esoftwaricaapp.Fragment.AddStudentFragment;
 import com.machamasisuraj.esoftwaricaapp.Fragment.StudentListFragment;
 
 public class BottomNavActivity extends AppCompatActivity {
@@ -21,6 +22,9 @@ public class BottomNavActivity extends AppCompatActivity {
 
         bottomnavigation = findViewById(R.id.bottomnavigation);
         bottomnavigation.setSelectedItemId(R.id.navigation_home);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, new StudentListFragment(getApplicationContext())).commit();
+
         bottomnavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -35,11 +39,13 @@ public class BottomNavActivity extends AppCompatActivity {
                        fragmentTransaction.replace(R.id.frame_container,studentListFragment);
                        fragmentTransaction.addToBackStack(null);
                        fragmentTransaction.commit();
-                       Toast.makeText(BottomNavActivity.this, "home", Toast.LENGTH_SHORT).show();
                        return true;
                        }
                    case  R.id.navigation_addstudent:
-                       Toast.makeText(BottomNavActivity.this, "add student", Toast.LENGTH_SHORT).show();
+                       AddStudentFragment addStudentFragment= new AddStudentFragment(getApplicationContext());
+                       fragmentTransaction.replace(R.id.frame_container,addStudentFragment);
+                       fragmentTransaction.addToBackStack(null);
+                       fragmentTransaction.commit();
                        return true;
                    case R.id.navigation_aboutus:
                        Toast.makeText(BottomNavActivity.this, "aboutus", Toast.LENGTH_SHORT).show();

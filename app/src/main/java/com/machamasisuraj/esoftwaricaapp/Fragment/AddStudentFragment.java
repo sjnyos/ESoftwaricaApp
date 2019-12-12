@@ -1,6 +1,7 @@
 package com.machamasisuraj.esoftwaricaapp.Fragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,17 +16,16 @@ import com.machamasisuraj.esoftwaricaapp.R;
  * A simple {@link Fragment} subclass.
  */
 public class AddStudentFragment extends Fragment {
+    private Context mContext;
 
-
-    public AddStudentFragment() {
-        // Required empty public constructor
+    public AddStudentFragment(Context mContext) {
+        this.mContext=mContext;
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_add_student, container, false);
     }
 
