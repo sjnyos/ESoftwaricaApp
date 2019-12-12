@@ -2,13 +2,14 @@ package com.machamasisuraj.esoftwaricaapp.models;
 
 public class Student {
     private String fullName,address,gender;
-    private int age;
+    private int age,imageid;
 
-    public Student(String fullName, String address, String gender, int age) {
+    public Student(String fullName, String address, String gender, int age,int imageid) {
         this.fullName = fullName;
         this.address = address;
         this.gender = gender;
         this.age = age;
+        this.imageid=imageid;
     }
 
     public String getFullName() {
@@ -37,6 +38,14 @@ public class Student {
 
     public int getAge() {
         return age;
+    }
+
+    public int getImageid() {
+        return imageid;
+    }
+
+    public void setImageid(int imageid) {
+        this.imageid = imageid;
     }
 
     public void setAge(int age) {
