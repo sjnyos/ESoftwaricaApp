@@ -16,4 +16,8 @@
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="@string/title_about" />
 
+    <item android:id="@+id/navigation_employee"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Employee"/>r
+
 </menu>

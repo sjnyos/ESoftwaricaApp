@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.machamasisuraj.esoftwaricaapp.Fragment.AboutUsFragment;
 import com.machamasisuraj.esoftwaricaapp.Fragment.AddStudentFragment;
+import com.machamasisuraj.esoftwaricaapp.Fragment.EmployeeFragment;
 import com.machamasisuraj.esoftwaricaapp.Fragment.StudentListFragment;
 
 public class BottomNavActivity extends AppCompatActivity {
@@ -51,6 +52,12 @@ public class BottomNavActivity extends AppCompatActivity {
                    case R.id.navigation_aboutus:{
                        AboutUsFragment aboutUsFragment= new AboutUsFragment(getApplicationContext());
                        fragmentTransaction.replace(R.id.frame_container,aboutUsFragment);
+                       fragmentTransaction.addToBackStack(null);
+                       fragmentTransaction.commit();
+                       return true;}
+                   case R.id.navigation_employee:{
+                       EmployeeFragment employeeFragment= new EmployeeFragment(getApplicationContext());
+                       fragmentTransaction.replace(R.id.frame_container,employeeFragment);
                        fragmentTransaction.addToBackStack(null);
                        fragmentTransaction.commit();
                        return true;}
